@@ -209,8 +209,8 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="js-nav-tooltip-link nav-link " href="./layouts/layouts.html" title="Layouts"
-                                data-placement="left">
+                            <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.dashboard') }}"
+                                title="Layouts" data-placement="left">
                                 <i class="tio-dashboard-vs-outlined nav-icon"></i>
                                 <span
                                     class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboard</span>
@@ -223,11 +223,11 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.categories.index') }}" title="Layouts"
-                                data-placement="left">
+                            <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.categories.index') }}"
+                                title="Layouts" data-placement="left">
                                 <i class="tio-label-important nav-icon"></i>
-                                <span
-                                    class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All Categories</span>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All
+                                    Categories</span>
                             </a>
                         </li>
 
@@ -241,12 +241,13 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="js-nav-tooltip-link nav-link" href="./documentation/typography.html"
-                                title="Components" data-placement="left">
-                                <i class="tio-arrow-large-backward nav-icon"></i>
-                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Sign
-                                    Out</span>
-                            </a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="nav-link">
+                                    <i class="tio-arrow-large-backward nav-icon"></i>
+                                    Sign Out
+                                </button>
+                            </form>
                         </li>
                         <li class="nav-item">
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
