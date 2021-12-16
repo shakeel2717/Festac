@@ -1,4 +1,7 @@
 @extends('admin.layout.app')
+@section('title')
+    Dashboard
+@endsection
 @section('content')
     <div class="row justify-content-sm-center text-center py-10">
         <div class="col-sm-7 col-md-5">

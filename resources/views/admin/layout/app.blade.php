@@ -7,6 +7,7 @@
     <title>@yield('title') | {{ env('APP_DESC') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/brand/favi.svg') }}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/icon-set/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
 </head>
@@ -217,6 +218,20 @@
                         </li>
 
                         <li class="nav-item">
+                            <small class="nav-subtitle" title="Business Categories">Business Categories</small>
+                            <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.categories.index') }}" title="Layouts"
+                                data-placement="left">
+                                <i class="tio-label-important nav-icon"></i>
+                                <span
+                                    class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All Categories</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <div class="nav-divider"></div>
                         </li>
 
@@ -293,8 +308,12 @@
     <script src="{{ asset('assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/hs-unfold/dist/hs-unfold.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/hs-form-search/dist/hs-form-search.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/datatables.net.extensions/select/select.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    @yield('footer')
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -63,6 +64,47 @@ class clean extends Command
         $user->role = 'user';
         $user->code = generate_user_code('U');
         $user->save();
+
+        // creating business cateogires
+        $business_categories = array(
+            'Accounting',
+            'Advertising',
+            'Agriculture',
+            'Apparel & Accessories',
+            'Automotive',
+            'Banking',
+            'Beauty & Cosmetics',
+            'Biotechnology',
+            'Business Services',
+            'Construction',
+            'Education',
+            'Electronics',
+            'Energy',
+            'Entertainment',
+            'Financial Services',
+            'Food & Beverage',
+            'Government',
+            'Healthcare',
+            'Insurance',
+            'Legal',
+            'Manufacturing',
+            'Media',
+            'Non-profit',
+            'Real Estate',
+            'Retail',
+            'Technology',
+            'Telecommunications',
+            'Transportation',
+            'Travel',
+            'Other'
+        );
+        // storing this categories into category model
+        foreach ($business_categories as $category) {
+            $cat = new Category();
+            $cat->value = $category;
+            $cat->status = 'active';
+            $cat->save();
+        }
 
         // creating a seller
         $seller = new User();
