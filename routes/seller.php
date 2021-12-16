@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('seller')->name('seller.')->middleware(['guest'])->group(function () {
     Route::get('/register', [RegisterController::class,'register'])->name('register');
+    Route::post('/store', [RegisterController::class,'store'])->name('store');
 });
 
 

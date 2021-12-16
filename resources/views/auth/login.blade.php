@@ -12,6 +12,17 @@
                         here</a></p>
             </div>
             <div class="row">
+                <div class="col-12">
+                    <a class="btn btn-lg btn-block btn-primary mb-4" href="{{ route('seller.register') }}">
+                        <span class="d-flex justify-content-center align-items-center">
+                            <img class="avatar avatar-xs mr-2" src="{{ asset('assets/img/seller.png') }}"
+                                alt="Image Description">
+                            Become Seller at {{ env('APP_NAME') }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-6">
                     <a class="btn btn-lg btn-block btn-white mb-4" href="{{ route('login.google') }}">
                         <span class="d-flex justify-content-center align-items-center">
