@@ -13,7 +13,7 @@
 
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
-                            <span class="card-title h2">{{ $users->where('rold', 'user')->count() }}</span>
+                            <span class="card-title h2">{{ $users->where('role', 'user')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -28,7 +28,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'user')->where('status', 'pending')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'user')->where('status', 'pending')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -43,7 +43,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'user')->where('status', 'pending')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'user')->where('status', 'pending')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -58,7 +58,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'user')->where('status', 'suspended')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'user')->where('status', 'suspended')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -76,7 +76,7 @@
 
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
-                            <span class="card-title h2">{{ $users->where('rold', 'seller')->count() }}</span>
+                            <span class="card-title h2">{{ $users->where('role', 'seller')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -91,7 +91,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'seller')->where('status', 'pending')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'seller')->where('status', 'pending')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -106,7 +106,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'seller')->where('status', 'pending')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'seller')->where('status', 'pending')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>
@@ -121,7 +121,7 @@
                     <div class="row align-items-center gx-2 mb-1">
                         <div class="col-6">
                             <span
-                                class="card-title h2">{{ $users->where('rold', 'seller')->where('status', 'suspended')->count() }}</span>
+                                class="card-title h2">{{ $users->where('role', 'seller')->where('status', 'suspended')->count() }}</span>
                         </div>
                     </div>
                     <span class="text-body font-size-sm ml-1">Sync: Just now</span>

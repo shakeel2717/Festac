@@ -218,6 +218,20 @@
                         </li>
 
                         <li class="nav-item">
+                            <small class="nav-subtitle" title="Users Management">Users Management</small>
+                            <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.users.index') }}"
+                                title="Layouts" data-placement="left">
+                                <i class="tio-group-junior nav-icon"></i>
+                                <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All
+                                    Users</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <small class="nav-subtitle" title="Business Categories">Business Categories</small>
                             <small class="tio-more-horizontal nav-subtitle-replacer"></small>
                         </li>
@@ -314,6 +328,7 @@
     <script src="{{ asset('assets/vendor/datatables.net.extensions/select/select.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <x-alert />
     @yield('footer')
 </body>
 
