@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.997937in" height="0.842776in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 310.67 262.37"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="703" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="700">
+	<font-face 
+		font-family="Malgun Gothic">
+		<font-face-src>
+			<font-face-name name="Malgun Gothic Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="F" horiz-adv-x="524" d="M485.832 603l-261.163 0 0 -197.668 240.662 0 0 -114.334 -240.662 0 0 -290.998 -139.168 0 0 718.834 400.332 0 0 -115.833z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Malgun Gothic";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#FEFEFE;stroke-width:9.99;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
+    .fil1 {fill:none}
+    .fil2 {fill:#FEFEFE}
+    .fil0 {fill:#377DFF}
+    .fnt0 {font-weight:bold;font-size:260.78px;font-family:'Malgun Gothic'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="29.18,140.48 64.36,79.53 99.55,18.59 169.92,18.59 240.3,18.59 275.48,79.53 310.67,140.48 275.48,201.42 240.3,262.37 169.92,262.37 99.55,262.37 64.36,201.42 "/>
+  <g>
+   <polygon class="fil1 str0" points="4.99,126.89 40.18,65.94 75.37,5 145.74,5 216.12,5 251.3,65.94 286.49,126.89 251.3,187.83 216.12,248.78 145.74,248.78 75.37,248.78 40.18,187.83 "/>
+   <polygon id="_1" class="fil0" points="4.99,126.89 40.18,65.94 75.37,5 145.74,5 216.12,5 251.3,65.94 286.49,126.89 251.3,187.83 216.12,248.78 145.74,248.78 75.37,248.78 40.18,187.83 "/>
+  </g>
+  <text x="71.24" y="220.62"  class="fil2 fnt0">F</text>
+ </g>
+</svg>
