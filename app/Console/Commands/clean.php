@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Category;
+use App\Models\issue;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -114,7 +115,23 @@ class clean extends Command
         $seller->role = 'seller';
         $seller->code = generate_user_code('S');
         $seller->save();
-        
+
+        $issue = new issue();
+        $issue->value = 'Payment Issue';
+        $issue->save();
+
+        $issue = new issue();
+        $issue->value = 'Shipping Issue';
+        $issue->save();
+
+        $issue = new issue();
+        $issue->value = 'Product Issue';
+        $issue->save();
+
+        $issue = new issue();
+        $issue->value = 'Other';
+        $issue->save();
+
         return Command::SUCCESS;
     }
 }

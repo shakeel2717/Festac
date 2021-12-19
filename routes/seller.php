@@ -3,6 +3,7 @@
 use App\Http\Controllers\seller\Auth\RegisterController;
 use App\Http\Controllers\seller\SellerDashboardController;
 use App\Http\Controllers\seller\SellerProfileController;
+use App\Http\Controllers\seller\SupportSellerController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,6 +16,8 @@ Route::prefix('seller')->name('seller.')->middleware(['guest'])->group(function 
 Route::prefix('seller/dashboard')->name('seller.')->middleware(['auth', 'seller'])->group(function () {
     Route::get('/index', [sellerDashboardController::class, 'index'])->name('dashboard');
     Route::resource('profile', SellerProfileController::class);;
+    Route::resource('support', SupportSellerController::class);;
+
 });
 
 
