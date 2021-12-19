@@ -19,7 +19,7 @@ class CreateSupportsTable extends Migration
             $table->string('type')->default('user');
             $table->string('subject');
             $table->longText('message');
-            $table->longText('status')->default('open');
+            $table->string('status')->default('open');
             $table->timestamps();
         });
     }
