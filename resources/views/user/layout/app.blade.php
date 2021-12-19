@@ -46,34 +46,6 @@
     </li>
 
     <li class="nav-item">
-        <small class="nav-subtitle" title="Users Management">Users Management</small>
-        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
-    </li>
-
-    <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.users.index') }}" title="Layouts"
-            data-placement="left">
-            <i class="tio-group-junior nav-icon"></i>
-            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All
-                Users</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <small class="nav-subtitle" title="Business Categories">Business Categories</small>
-        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
-    </li>
-
-    <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.categories.index') }}" title="Layouts"
-            data-placement="left">
-            <i class="tio-label-important nav-icon"></i>
-            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All
-                Categories</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
         <div class="nav-divider"></div>
     </li>
 

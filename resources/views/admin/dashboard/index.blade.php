@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 @section('title')
-    Dashboard
+    Admin Dashboard
 @endsection
 @section('content')
     <h3 class="display-4">Users State</h3>

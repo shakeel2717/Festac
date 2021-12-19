@@ -1,5 +1,8 @@
-<h2 class="title">Welcome Seller to Dashboard</h2>
-<form action="{{ route('logout') }}" method="POST">
-    @csrf
-    <button type="submit" class="btn btn-primary">Logout</button>
-</form>
+@extends('seller.dashboard.layout.app')
+@section('title')
+    Seller Dashboard
+@endsection
+@section('content')
+    <h3 class="display-4">Seller State</h3>
+    <hr>
+@endsection
