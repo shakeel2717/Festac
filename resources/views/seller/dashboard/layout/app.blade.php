@@ -58,6 +58,14 @@
         </a>
     </li>
 
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.profile.index') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-new-message nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Edit Profile</span>
+        </a>
+    </li>
+
     <li class="nav-item">
         <small class="nav-subtitle" title="My Account">Support Center</small>
         <small class="tio-more-horizontal nav-subtitle-replacer"></small>

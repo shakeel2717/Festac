@@ -87,7 +87,7 @@ class SellerProfileController extends Controller
         $task->twitter = $request->twitter;
         $task->whatsapp = $request->whatsapp;
         $task->save();
-        return redirect()->back()->with('success', 'Profile updated successfully');
+        return redirect()->back()->with('message', 'Profile updated successfully');
     }
 
     /**
