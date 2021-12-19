@@ -3,7 +3,7 @@
     Seller Dashboard
 @endsection
 @section('content')
-    <h3 class="display-4">Seller State</h3>
+    <h3 class="display-4">Seller Code: {{ Auth::user()->code }}</h3>
     <hr>
     <x-seller-warning />
     <div class="row gx-2 gx-lg-3">
@@ -79,7 +79,8 @@
                     </a>
                 </div>
                 <div class="col-lg-12">
-                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="{{ route('seller.support.index') }}">
+                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4"
+                        href="{{ route('seller.support.index') }}">
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <img class="avatar avatar-xl mr-4" src="{{ asset('assets/img/support.png') }}"
@@ -98,7 +99,8 @@
                     </a>
                 </div>
                 <div class="col-lg-12">
-                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="{{ route('seller.profile.index') }}">
+                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4"
+                        href="{{ route('seller.profile.index') }}">
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <img class="avatar avatar-xl mr-4" src="{{ asset('assets/img/profile.png') }}"
@@ -125,9 +127,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                       "target": "#reportsOverviewDropdown3",
-                                                       "type": "css-animation"
-                                                     }'>
+                                                           "target": "#reportsOverviewDropdown3",
+                                                           "type": "css-animation"
+                                                         }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 

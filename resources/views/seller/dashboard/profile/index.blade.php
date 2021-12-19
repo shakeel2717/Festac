@@ -33,14 +33,44 @@
                         <i class="tio-poi-user mr-1"></i>
                         <span>{{ auth()->user()->code }}</span>
                     </div>
+                    <ul class="list-inline list-inline-m-1 mb-0">
+                        <li class="list-inline-item"><a class="badge badge-soft-secondary p-2"
+                                href="#">{{ auth()->user()->email }}</a></li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="card bg-primary">
+                                <div class="card-body p-0">
+                                    @if (auth()->user()->facebook != null)
+                                        <a class="display-3 text-white" href="{{ auth()->user()->facebook }}"> <i
+                                                class="tio-facebook-square"></i></a>
+                                    @endif
+                                    @if (auth()->user()->whatsapp != null)
+                                        <a class="display-3 text-white" href="{{ auth()->user()->whatsapp }}"> <i
+                                                class="tio-whatsapp"></i></a>
+                                    @endif
+                                    @if (auth()->user()->instagram != null)
+                                        <a class="display-3 text-white" href="{{ auth()->user()->instagram }}"> <i
+                                                class="tio-instagram"></i></a>
+                                    @endif
+                                    @if (auth()->user()->twitter != null)
+                                        <a class="display-3 text-white" href="{{ auth()->user()->twitter }}"> <i
+                                                class="tio-twitter"></i></a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="card-footer">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto py-1">
                             <a class="font-size-sm text-body" href="#">{{ Str::ucfirst(auth()->user()->status) }}</a>
                         </div>
                         <div class="col-auto py-1">
-                            <a href="{{ route('seller.profile.edit', ['profile' => Auth::user()->id]) }}" class="btn btn-primary"><i class="tio-new-message"></i> Edit Profile</a>
+                            <a href="{{ route('seller.profile.edit', ['profile' => Auth::user()->id]) }}"
+                                class="btn btn-primary"><i class="tio-new-message"></i> Edit Profile</a>
                         </div>
                     </div>
                 </div>
