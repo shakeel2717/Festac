@@ -79,7 +79,7 @@
                     </a>
                 </div>
                 <div class="col-lg-12">
-                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="#">
+                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="{{ route('seller.support.index') }}">
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <img class="avatar avatar-xl mr-4" src="{{ asset('assets/img/support.png') }}"
@@ -98,7 +98,7 @@
                     </a>
                 </div>
                 <div class="col-lg-12">
-                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="#">
+                    <a class="card bg-primary card-hover-shadow shadow-lg mb-4" href="{{ route('seller.profile.index') }}">
                         <div class="card-body">
                             <div class="media align-items-center">
                                 <img class="avatar avatar-xl mr-4" src="{{ asset('assets/img/profile.png') }}"
