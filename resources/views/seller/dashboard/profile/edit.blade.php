@@ -16,8 +16,8 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <a href="{{ route('seller.profile.edit', ['profile' => Auth::user()->id]) }}"
-                                    class="btn btn-primary btn-lg"> <i class="tio-settings"></i> Edit Profile</a>
+                                <a href="{{ route('seller.profile.index', ['profile' => Auth::user()->id]) }}"
+                                    class="btn btn-primary btn-lg"> <i class="tio-settings"></i> Go Back</a>
                             </div>
                             <div class="col-md-12">
                                 <label for="name">Full Name</label>
