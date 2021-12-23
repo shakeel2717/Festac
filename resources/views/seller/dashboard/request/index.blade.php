@@ -7,15 +7,16 @@
     <hr>
     <div class="row">
         @forelse ($requests as $request)
-            <div class="col mb-3 mb-lg-5">
+            <div class="col-12 mb-3">
                 <!-- Card -->
                 <div class="card card-body">
                     <div class="media align-items-md-center">
                         <!-- Avatar -->
-                        <img class="avatar mr-3 mr-lg-4" src="{{ asset('assets/img/open.png') }}" alt="Image Description">
+                        <img class="d-none d-md-block avatar mr-3 mr-lg-4" src="{{ asset('assets/img/open.png') }}"
+                            alt="Image Description">
 
                         <div class="media-body">
-                            <div class="row align-items-sm-center">
+                            <div class="row align-items-center">
                                 <div class="col">
                                     <span
                                         class="badge badge-soft-secondary p-2 mb-2">{{ Str::ucfirst($request->status) }}</span>
@@ -24,7 +25,7 @@
                                     <p>{{ $request->requirement }}</p>
                                 </div>
 
-                                <div class="col-md-3 justify-content-md-end ml-3 mb-3">
+                                <div class="col-auto justify-content-md-end ml-3 mb-3">
                                     <!-- Avatar Group -->
                                     <div class="avatar-group avatar-group-sm avatar-circle">
                                         <a href="https://api.whatsapp.com/send?phone={{ $request->user->whatsapp }}"
