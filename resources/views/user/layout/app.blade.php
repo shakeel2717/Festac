@@ -38,10 +38,29 @@
     </li>
 
     <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('admin.dashboard') }}" title="Layouts"
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.dashboard') }}" title="Layouts"
             data-placement="left">
             <i class="tio-dashboard-vs-outlined nav-icon"></i>
             <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Dashboard</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <small class="nav-subtitle" title="Request Management">Request Management</small>
+        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.index') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-shopping-cart-add nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All Requests</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.create') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-add-circle nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">New Request</span>
         </a>
     </li>
 

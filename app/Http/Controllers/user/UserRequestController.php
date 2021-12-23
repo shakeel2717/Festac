@@ -15,7 +15,8 @@ class UserRequestController extends Controller
      */
     public function index()
     {
-        //
+        $requests = UserRequest::where('user_id', auth()->user()->id)->paginate(10);
+        return view('user.dashboard.request.index', compact('requests'));
     }
 
     /**
@@ -94,6 +95,12 @@ class UserRequestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $request = UserRequest::find($id);
+        
+        if ($request->status != 'open') {
+            return redirect()->back()->withErrors('You can not delete this request');
+        }
+        $request->delete();
+        return redirect()->back()->with('message', 'Request deleted successfully');
     }
 }
