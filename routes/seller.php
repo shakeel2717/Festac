@@ -18,10 +18,10 @@ Route::prefix('seller/dashboard')->name('seller.')->middleware(['auth', 'seller'
     Route::get('/index', [sellerDashboardController::class, 'index'])->name('dashboard');
     Route::resource('profile', SellerProfileController::class);;
     Route::resource('support', SupportSellerController::class);;
-    Route::get('/request/index',[SellerRequestController::class,'index'])->name('request.index');
-    Route::get('/request/show/{id}',[SellerRequestController::class,'show'])->name('request.show');
-    Route::post('/request/store',[SellerRequestController::class,'store'])->name('request.store');
-
+    Route::get('/request/index', [SellerRequestController::class, 'index'])->name('request.index');
+    Route::get('/request/show/{id}', [SellerRequestController::class, 'show'])->name('request.show');
+    Route::post('/request/store', [SellerRequestController::class, 'store'])->name('request.store');
+    Route::get('/request/sent', [SellerRequestController::class, 'sent'])->name('request.sent');
 });
 
 

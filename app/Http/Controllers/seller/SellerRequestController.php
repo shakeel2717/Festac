@@ -42,4 +42,11 @@ class SellerRequestController extends Controller
         $offer->save();
         return redirect()->back()->with('message', 'Offer sent successfully');
     }
+
+
+    public function sent()
+    {
+        $offers = Offer::where('seller_id', auth()->user()->id)->where('status', 'open')->paginate(10);
+        return view('seller.dashboard.request.sent', compact('offers'));
+    }
 }

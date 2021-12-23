@@ -20,4 +20,9 @@ class UserRequest extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function offer()
+    {
+        return $this->belongsTo(offer::class);
+    }
 }
