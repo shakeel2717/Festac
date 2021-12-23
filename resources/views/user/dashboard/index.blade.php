@@ -5,6 +5,7 @@
 @section('content')
     <h3 class="display-4">User Dashboard [{{ Auth::user()->code }}]</h3>
     <hr>
+    <x-user-warning />
     <div class="row gx-2 gx-lg-3">
         <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
             <div class="card h-100 shadow-lg">
