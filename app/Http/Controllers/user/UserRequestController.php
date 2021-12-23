@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class UserRequestController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::where('status', 'active')->get();
+        return view('user.dashboard.request.create',compact('categories'));
     }
 
     /**
