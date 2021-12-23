@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Offer;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ class UserRequestController extends Controller
     public function create()
     {
         $categories = Category::where('status', 'active')->get();
-        return view('user.dashboard.request.create',compact('categories'));
+        return view('user.dashboard.request.create', compact('categories'));
     }
 
     /**
@@ -47,7 +48,7 @@ class UserRequestController extends Controller
         ]);
         // checking if this user has valid whatsapp
         if (Auth::user()->whatsapp == null) {
-            return redirect()->route('user.profile.edit',['profile' => auth()->user()->id])->withErrors('Please add your whatsapp number first');
+            return redirect()->route('user.profile.edit', ['profile' => auth()->user()->id])->withErrors('Please add your whatsapp number first');
         }
         // inserting into user request
         $user_request = new UserRequest();
@@ -58,6 +59,21 @@ class UserRequestController extends Controller
         $user_request->status = 'open';
         $user_request->save();
         return redirect()->back()->with('message', 'Request sent successfully');
+    }
+
+    public function received()
+    {
+        // get all offers with the userRequest table
+        $UserRequest = UserRequest::where('user_id', auth()->user()->id)->get();
+        return $UserRequest[0]->offer;
+        return view('user.dashboard.request.received', compact('offers'));
+    }
+
+
+    public function receivedShow($id)
+    {
+        $user_request = UserRequest::findOrFail($id);
+        return view('user.dashboard.request.receivedShow', compact('user_request'));
     }
 
     /**
@@ -103,7 +119,7 @@ class UserRequestController extends Controller
     public function destroy($id)
     {
         $request = UserRequest::find($id);
-        
+
         if ($request->status != 'open') {
             return redirect()->back()->withErrors('You can not delete this request');
         }

@@ -64,6 +64,14 @@
         </a>
     </li>
 
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.received') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-checkmark-square nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Received Offer</span>
+        </a>
+    </li>
+
 
     <li class="nav-item">
         <small class="nav-subtitle" title="My Account">My Account</small>
