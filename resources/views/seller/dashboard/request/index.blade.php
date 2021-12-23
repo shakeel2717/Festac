@@ -27,11 +27,18 @@
 
                                 <div class="col-auto justify-content-md-end ml-3 mb-3">
                                     <!-- Avatar Group -->
-                                    <div class="avatar-group avatar-group-sm avatar-circle">
+                                    <div class="m-2">
                                         <a href="https://api.whatsapp.com/send?phone={{ $request->user->whatsapp }}"
-                                            class="btn btn-lg btn-success" target="_blank">
+                                            class="btn btn-lg btn-success btn-block" target="_blank">
                                             Contact Whatsapp
                                             <i class="tio-whatsapp"></i>
+                                        </a>
+                                    </div>
+                                    <div class="m-2">
+                                        <a href="{{ route('seller.request.show', ['id' => $request->id]) }}"
+                                            class="btn btn-lg btn-primary btn-block">
+                                            Send Quote
+                                            <i class="tio-checkmark-circle"></i>
                                         </a>
                                     </div>
                                     <!-- End Avatar Group -->
@@ -64,13 +71,12 @@
                                 </li>
 
                             </ul>
-                            <!-- End Stats -->
-                            <a class="stretched-link" href="#"></a>
                         </div>
                     </div>
                 </div>
                 <!-- End Card -->
             </div>
+            {{ $requests->links() }}
         @empty
             <div class="col-12">
                 <div class="alert alert-info">
