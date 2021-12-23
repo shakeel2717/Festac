@@ -67,6 +67,19 @@
     </li>
 
     <li class="nav-item">
+        <small class="nav-subtitle" title="Request Management">Request Management</small>
+        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.request.index') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-shopping-basket-add nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">User Request</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
         <small class="nav-subtitle" title="My Account">Support Center</small>
         <small class="tio-more-horizontal nav-subtitle-replacer"></small>
     </li>
