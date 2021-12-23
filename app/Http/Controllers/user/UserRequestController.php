@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserRequestController extends Controller
 {
@@ -44,6 +45,10 @@ class UserRequestController extends Controller
             'requirement' => 'required|string|min:20',
             'budget' => 'required|integer',
         ]);
+        // checking if this user has valid whatsapp
+        if (Auth::user()->whatsapp == null) {
+            return redirect()->route('user.profile.edit',['profile' => auth()->user()->id])->withErrors('Please add your whatsapp number first');
+        }
         // inserting into user request
         $user_request = new UserRequest();
         $user_request->user_id = auth()->user()->id;
