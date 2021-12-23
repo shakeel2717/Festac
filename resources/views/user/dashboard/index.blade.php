@@ -1,9 +1,9 @@
 @extends('user.layout.app')
 @section('title')
-    User Dashboard
+    User Dashboard {{ Auth::user()->code }}
 @endsection
 @section('content')
-    <h3 class="display-4">User Dashboard</h3>
+    <h3 class="display-4">User Dashboard [{{ Auth::user()->code }}]</h3>
     <hr>
     <div class="row gx-2 gx-lg-3">
         <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
