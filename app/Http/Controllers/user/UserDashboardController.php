@@ -14,7 +14,7 @@ class UserDashboardController extends Controller
     {
         $categories = Category::where('status', 'active')->get();
         $requests = UserRequest::where('user_id', auth()->user()->id)->get();
-        $orders = order::where('user_id', auth()->user()->id)->get();
+        $orders = order::where('user_id', auth()->user()->id)->where('status', 'open')->take(2)->get();
         return view('user.dashboard.index', compact('categories', 'requests', 'orders'));
     }
 }

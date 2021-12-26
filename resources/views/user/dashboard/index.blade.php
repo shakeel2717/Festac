@@ -116,7 +116,7 @@
                             <div class="row align-items-md-center">
                                 <div class="col-9 col-md-10 mb-2 mb-md-0">
                                     <h4 class="mb-1">
-                                        <a class="text-dark" href="#">No Order Found</a>
+                                        <a class="text-dark" href="#">No Active Order Found</a>
                                     </h4>
 
                                     <span class="d-block">

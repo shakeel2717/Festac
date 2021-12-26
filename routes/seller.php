@@ -23,6 +23,7 @@ Route::prefix('seller/dashboard')->name('seller.')->middleware(['auth', 'seller'
     Route::get('/request/show/{id}', [SellerRequestController::class, 'show'])->name('request.show');
     Route::post('/request/store', [SellerRequestController::class, 'store'])->name('request.store');
     Route::get('/request/sent', [SellerRequestController::class, 'sent'])->name('request.sent');
+    Route::get('order/request/{order}', [SellerOrderController::class, 'request'])->name('order.request');
     Route::resource('order', SellerOrderController::class);
 });
 

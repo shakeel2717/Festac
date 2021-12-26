@@ -7,7 +7,7 @@
     <hr>
     <x-seller-warning />
     <div class="row gx-2 gx-lg-3">
-        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
             <!-- Card -->
             <div class="card h-100 shadow-lg">
                 <div class="card-body">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
             <!-- Card -->
             <div class="card h-100 shadow-lg">
                 <div class="card-body">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
             <!-- Card -->
             <div class="card h-100 shadow-lg">
                 <div class="card-body">
@@ -58,6 +58,93 @@
             </div>
         </div>
     </div>
+    @forelse ($orders as $order)
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card card-body">
+                    <div class="media align-items-md-center">
+                        <div class="avatar avatar-xl mr-3">
+                            <img src="{{ asset('assets/img/cart-check.png') }}" alt="" class="avatar-img">
+                        </div>
+                        <div class="media-body">
+                            <div class="row align-items-md-center">
+                                <div class="col-9 col-md-10 col-lg-8 mb-2 mb-md-0">
+                                    <h4 class="">
+                                        <a class="text-dark" href="#">{{ $order->UserRequest->category->value }}</a>
+                                    </h4>
+                                    <span class="d-block">
+                                        <span>{{ $order->UserRequest->requirement }}</span>
+                                    </span>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Created:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($order->created_at))->diffForHumans() }}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Category:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ ucfirst($order->userRequest->category->value) }}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Total Cost:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ number_format($order->amount, 2) }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-auto col-lg-4 order-md-last">
+                                    <a href="{{ route('seller.order.request', ['order' => $order->id]) }}"
+                                        class="btn btn-lg btn-success btn-block mt-md-4 mt-lg-0 m-2"><i
+                                            class="tio-checkmark-square-outlined"></i> Mark as Complete
+                                    </a>
+                                    <a href="https://api.whatsapp.com/send?phone={{ $order->seller->whatsapp }}"
+                                        class="btn btn-lg btn-outline-success btn-block mt-md-4 mt-lg-0 m-2"><i
+                                            class="tio-whatsapp"></i> Contact Whatsapp
+                                        <i class="tio-open-in-new"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @empty
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card card-body">
+                    <div class="media align-items-md-center">
+                        <div class="avatar avatar-xl mr-3">
+                            <img src="{{ asset('assets/img/no-order.png') }}" alt="" class="avatar-img">
+                        </div>
+                        <div class="media-body">
+                            <div class="row align-items-md-center">
+                                <div class="col-9 col-md-10 mb-2 mb-md-0">
+                                    <h4 class="mb-1">
+                                        <a class="text-dark" href="#">No Active Order Found</a>
+                                    </h4>
+
+                                    <span class="d-block">
+                                        <span>You Don't have any On Going Order, go to Request Center and Post your Requets
+                                            to start using our service</span>
+                                    </span>
+                                </div>
+
+                                <div class="col-sm-auto order-md-last">
+                                    <a href="{{ route('seller.request.index') }}"
+                                        class="btn btn-lg btn-outline-success btn-block">Check new Request <i
+                                            class="tio-open-in-new"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforelse
     <div class="row">
         <div class="col-6">
             <div class="row">
@@ -130,9 +217,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                                           "target": "#reportsOverviewDropdown3",
-                                                                           "type": "css-animation"
-                                                                         }'>
+                                                                                                       "target": "#reportsOverviewDropdown3",
+                                                                                                       "type": "css-animation"
+                                                                                                     }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 
