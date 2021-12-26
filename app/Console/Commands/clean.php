@@ -54,6 +54,7 @@ class clean extends Command
         $admin->email = 'admin@admin.com';
         $admin->password = Hash::make('asdfasdf');
         $admin->role = 'admin';
+        $admin->whatsapp = '03006558604';
         $admin->code = generate_user_code('A');
         $admin->save();
 
@@ -63,6 +64,7 @@ class clean extends Command
         $user->email = 'shakeel2717@gmail.com';
         $user->password = Hash::make('asdfasdf');
         $user->role = 'user';
+        $user->whatsapp = '03037702717';
         $user->code = generate_user_code('U');
         $user->save();
 
@@ -113,6 +115,7 @@ class clean extends Command
         $seller->email = 'basharat@gmail.com';
         $seller->password = Hash::make('asdfasdf');
         $seller->role = 'seller';
+        $admin->whatsapp = '03006558604';
         $seller->code = generate_user_code('S');
         $seller->save();
 

@@ -45,6 +45,17 @@
         </a>
     </li>
     <li class="nav-item">
+        <small class="nav-subtitle" title="Work Place">Work Place</small>
+        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.index') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-sort nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Order Management</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <small class="nav-subtitle" title="Request Management">Request Management</small>
         <small class="tio-more-horizontal nav-subtitle-replacer"></small>
     </li>
@@ -87,7 +98,8 @@
     </li>
 
     <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.profile.edit',['profile' => auth()->user()->id]) }}" title="Layouts"
+        <a class="js-nav-tooltip-link nav-link "
+            href="{{ route('user.profile.edit', ['profile' => auth()->user()->id]) }}" title="Layouts"
             data-placement="left">
             <i class="tio-new-message nav-icon"></i>
             <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Edit Profile</span>

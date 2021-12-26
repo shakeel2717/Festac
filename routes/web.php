@@ -13,6 +13,7 @@ Route::prefix('user/dashboard')->name('user.')->middleware(['auth', 'user'])->gr
     Route::get('/index', [UserDashboardController::class, 'index'])->name('dashboard');
     Route::get('/received', [UserRequestController::class, 'received'])->name('request.received');
     Route::get('/received/show/{id}', [UserRequestController::class, 'receivedShow'])->name('request.receivedShow');
+    Route::post('/received', [UserRequestController::class, 'receivedAccept'])->name('request.receivedAccept');
     Route::resource('request', UserRequestController::class);
     Route::resource('profile', UserProfileController::class);;
 });

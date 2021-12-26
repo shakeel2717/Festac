@@ -72,9 +72,27 @@ class UserRequestController extends Controller
 
     public function receivedShow($id)
     {
-        $user_request = Offer::where('user_requests_id', $id)->get();
+        $user_request = Offer::where('user_requests_id', $id)->where('status', 'open')->get();
         return view('user.dashboard.request.receivedShow', compact('user_request'));
     }
+
+    public function receivedAccept(Request $request)
+    {
+        $validatedData = $request->validate([
+            'offer_id' => 'required|integer',
+            'user_requests_id' => 'required|integer',
+        ]);
+        // updating the status of the request
+        $user_request = UserRequest::find($validatedData['user_requests_id']);
+        $user_request->status = 'accepted';
+        $user_request->save();
+        // updating the status of the offer
+        $offer = Offer::find($validatedData['offer_id']);
+        $offer->status = 'accepted';
+        $offer->save();
+        return redirect()->back()->with('message', 'Request accepted successfully');
+    }
+
 
     /**
      * Display the specified resource.
