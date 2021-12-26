@@ -20,6 +20,7 @@ Route::prefix('user/dashboard')->name('user.')->middleware(['auth', 'user'])->gr
     Route::get('order/onGoing', [UserOrderController::class, 'onGoing'])->name('order.onGoing');
     Route::get('order/complete', [UserOrderController::class, 'complete'])->name('order.complete');
     Route::get('order/request', [UserOrderController::class, 'request'])->name('order.request');
+    Route::post('order/accept', [UserOrderController::class, 'accept'])->name('order.accept');
     Route::resource('order', UserOrderController::class);
 
 });

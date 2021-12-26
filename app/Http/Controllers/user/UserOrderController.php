@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\order;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class UserOrderController extends Controller
@@ -22,21 +23,43 @@ class UserOrderController extends Controller
 
     public function onGoing()
     {
-        $orders = order::where('user_id', auth()->user()->id)->where('status','open')->get();
+        $orders = order::where('user_id', auth()->user()->id)->where('status', 'open')->get();
         return view('user.dashboard.order.onGoing', compact('orders'));
     }
 
     public function complete()
     {
-        $orders = order::where('user_id', auth()->user()->id)->where('status','complete')->get();
+        $orders = order::where('user_id', auth()->user()->id)->where('status', 'complete')->get();
         return view('user.dashboard.order.complete', compact('orders'));
     }
 
 
     public function request()
     {
-        $orders = order::where('user_id', auth()->user()->id)->where('status','request')->get();
+        $orders = order::where('user_id', auth()->user()->id)->where('status', 'request')->get();
         return view('user.dashboard.order.request', compact('orders'));
+    }
+
+
+    public function accept(Request $request)
+    {
+        $validatedData = $request->validate([
+            'order_id' => 'required',
+        ]);
+
+        $order = order::find($request->order_id);
+        $order->status = 'Complete';
+        $order->save();
+        // inseting this balance into seller balance
+        $transaction = new Transaction();
+        $transaction->user_id = $order->seller_id;
+        $transaction->type = 'credit';
+        $transaction->amount = $order->amount;
+        $transaction->sum = '+';
+        $transaction->status = 'approved';
+        $transaction->note = 'Order Completed';
+        $transaction->save();
+        return redirect()->back()->with('message', 'Order Accepted Successfully');
     }
 
     /**

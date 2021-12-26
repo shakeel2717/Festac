@@ -42,10 +42,13 @@
                                 </div>
 
                                 <div class="col-sm-auto col-lg-4 order-md-last">
-                                    <a href="https://api.whatsapp.com/send?phone={{ $order->seller->whatsapp }}"
-                                        class="btn btn-lg btn-outline-success btn-block mt-md-4 mt-lg-0"><i
-                                            class="tio-whatsapp"></i> Contact Whatsapp
-                                        <i class="tio-open-in-new"></i></a>
+                                    <form action="{{ route('user.order.accept') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="order_id" value="{{ $order->id }}">
+                                        <button class="btn btn-lg btn-success btn-block mt-md-4 mt-lg-0"><i
+                                                class="tio-checkmark-square-outlined"></i> Accept Delivery
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
