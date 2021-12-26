@@ -49,10 +49,31 @@
         <small class="tio-more-horizontal nav-subtitle-replacer"></small>
     </li>
     <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.index') }}" title="Layouts"
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.order.index') }}" title="Layouts"
             data-placement="left">
             <i class="tio-sort nav-icon"></i>
-            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Order Management</span>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">All Orders</span>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.order.onGoing') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-sort nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">On Going Orders</span>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.order.complete') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-sort nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Complete Orders</span>
+        </a>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.order.request') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-sort nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Waiting to Approve</span>
         </a>
     </li>
     <li class="nav-item">

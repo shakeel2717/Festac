@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\user\UserDashboardController;
+use App\Http\Controllers\user\UserOrderController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\UserRequestController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,12 @@ Route::prefix('user/dashboard')->name('user.')->middleware(['auth', 'user'])->gr
     Route::get('/received/show/{id}', [UserRequestController::class, 'receivedShow'])->name('request.receivedShow');
     Route::post('/received', [UserRequestController::class, 'receivedAccept'])->name('request.receivedAccept');
     Route::resource('request', UserRequestController::class);
-    Route::resource('profile', UserProfileController::class);;
+    Route::resource('profile', UserProfileController::class);
+    Route::get('order/onGoing', [UserOrderController::class, 'onGoing'])->name('order.onGoing');
+    Route::get('order/complete', [UserOrderController::class, 'complete'])->name('order.complete');
+    Route::get('order/request', [UserOrderController::class, 'request'])->name('order.request');
+    Route::resource('order', UserOrderController::class);
+
 });
 
 
