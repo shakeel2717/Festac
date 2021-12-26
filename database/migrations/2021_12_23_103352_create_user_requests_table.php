@@ -15,7 +15,7 @@ class CreateUserRequestsTable extends Migration
     {
         Schema::create('user_requests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('seller_id')->default(0);
             $table->string('category_id');
             $table->text('requirement');
