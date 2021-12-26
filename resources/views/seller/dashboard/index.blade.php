@@ -267,9 +267,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                                                                                   "target": "#reportsOverviewDropdown3",
-                                                                                                                   "type": "css-animation"
-                                                                                                                 }'>
+                                                                "target": "#reportsOverviewDropdown3",
+                                                                "type": "css-animation"
+                                                                }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 
@@ -285,52 +285,51 @@
                 </div>
                 <div class="card-body card-body-height">
                     <ul class="list-group list-group-flush list-group-no-gutters">
-                        <li class="list-group-item">
-                            <div class="media">
-                                <img class="avatar avatar-sm avatar-circle mr-3"
-                                    src="{{ asset('assets/img/finance.png') }}" alt="Image Description">
-                                <div class="media-body">
-                                    <div class="row">
-                                        <div class="col-7 col-md-5 order-md-1">
-                                            <h5 class="mb-0 text-danger">Withdraw</h5>
-                                            <span class="font-size-sm">Net Income</span>
-                                        </div>
+                        @forelse ($transactions as $transaction)
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <img class="avatar avatar-sm avatar-circle mr-3"
+                                        src="{{ asset('assets/img/finance.png') }}" alt="Image Description">
+                                    <div class="media-body">
+                                        <div class="row">
+                                            <div class="col-7 col-md-5 order-md-1">
+                                                <h5
+                                                    class="mb-0 text-{{ $transaction->sum == '+' ? 'success' : 'danger' }} text-uppercase">
+                                                    {{ $transaction->type }}</h5>
+                                                <span class="font-size-sm">Net Income</span>
+                                            </div>
 
-                                        <div class="col-5 col-md-4 order-md-3 text-right mt-2 mt-md-0">
-                                            <h5 class="mb-0 text-danger">-$10.00 USD</h5>
-                                            <span class="font-size-sm">{{ date('Y-m-d') }}</span>
-                                        </div>
+                                            <div class="col-5 col-md-4 order-md-3 text-right mt-2 mt-md-0">
+                                                <h5
+                                                    class="mb-0 text-{{ $transaction->sum == '+' ? 'success' : 'danger' }}">
+                                                    {{ $transaction->sum }}
+                                                    {{ number_format($transaction->amount, 2) }}</h5>
+                                                <span
+                                                    class="font-size-sm">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($transaction->created_at))->diffForHumans() }}</span>
+                                            </div>
 
-                                        <div class="col-auto col-md-3 order-md-2">
-                                            <span class="badge badge-soft-warning badge-pill">Pending</span>
+                                            <div class="col-auto col-md-3 order-md-2">
+                                                <span
+                                                    class="badge badge-soft-{{ $transaction->status == 'pending' ? 'warning' : 'success' }} badge-pill text-uppercase">{{ $transaction->status }}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="media">
-                                <img class="avatar avatar-sm avatar-circle mr-3"
-                                    src="{{ asset('assets/img/finance.png') }}" alt="Image Description">
-                                <div class="media-body">
-                                    <div class="row">
-                                        <div class="col-7 col-md-5 order-md-1">
-                                            <h5 class="mb-0 text-success">Order Revenue</h5>
-                                            <span class="font-size-sm">Net Income</span>
-                                        </div>
-
-                                        <div class="col-5 col-md-4 order-md-3 text-right mt-2 mt-md-0">
-                                            <h5 class="mb-0 text-success">-$10.00 USD</h5>
-                                            <span class="font-size-sm">{{ date('Y-m-d') }}</span>
-                                        </div>
-
-                                        <div class="col-auto col-md-3 order-md-2">
-                                            <span class="badge badge-soft-success badge-pill">Complete</span>
+                            </li>
+                        @empty
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <h5 class="mb-0 text-danger">No Transaction Found</h5>
+                                                <span class="font-size-sm">You Don't have any Activity yet!</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        @endforelse
                     </ul>
                 </div>
             </div>
