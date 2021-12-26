@@ -46,6 +46,18 @@
     </li>
 
     <li class="nav-item">
+        <small class="nav-subtitle" title="Work Place">Work Place</small>
+        <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+    </li>
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('user.request.index') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-sort nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Order Management</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
         <small class="nav-subtitle" title="My Account">My Account</small>
         <small class="tio-more-horizontal nav-subtitle-replacer"></small>
     </li>

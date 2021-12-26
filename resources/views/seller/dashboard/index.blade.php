@@ -51,7 +51,7 @@
                         <div class="col-9 d-flex align-items-end flex-column">
                             <h6 class="card-subtitle mb-2">Pending Orders</h6>
                             <span
-                                class="display-3 text-dark">{{ $requests->where('status', 'pending')->where('seller_id', auth()->user()->id)->count() }}</span>
+                                class="display-3 text-dark">{{ $requests->where('status', 'accepted')->where('seller_id', auth()->user()->id)->count() }}</span>
                         </div>
                     </div>
                 </div>
@@ -130,9 +130,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                                       "target": "#reportsOverviewDropdown3",
-                                                                       "type": "css-animation"
-                                                                     }'>
+                                                                           "target": "#reportsOverviewDropdown3",
+                                                                           "type": "css-animation"
+                                                                         }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 

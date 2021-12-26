@@ -82,14 +82,16 @@ class UserRequestController extends Controller
             'offer_id' => 'required|integer',
             'user_requests_id' => 'required|integer',
         ]);
-        // updating the status of the request
-        $user_request = UserRequest::find($validatedData['user_requests_id']);
-        $user_request->status = 'accepted';
-        $user_request->save();
         // updating the status of the offer
         $offer = Offer::find($validatedData['offer_id']);
         $offer->status = 'accepted';
         $offer->save();
+
+        // updating the status of the request
+        $user_request = UserRequest::find($validatedData['user_requests_id']);
+        $user_request->status = 'accepted';
+        $user_request->seller_id = $offer->seller_id;
+        $user_request->save();
         return redirect()->back()->with('message', 'Request accepted successfully');
     }
 
