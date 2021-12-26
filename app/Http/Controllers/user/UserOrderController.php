@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\order;
 use App\Models\Transaction;
+use App\Models\UserRequest;
 use Illuminate\Http\Request;
 
 class UserOrderController extends Controller
@@ -50,6 +51,17 @@ class UserOrderController extends Controller
         $order = order::find($request->order_id);
         $order->status = 'Complete';
         $order->save();
+
+        // user request status complete
+        $userRequest = UserRequest::find($order->UserRequest->id);
+        $userRequest->status = 'complete';
+        $userRequest->save();
+
+        // mark offer as a complete
+        $offer = $order->offer;
+        $offer->status = 'complete';
+        $offer->save();
+
         // inseting this balance into seller balance
         $transaction = new Transaction();
         $transaction->user_id = $order->seller_id;

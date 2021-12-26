@@ -66,7 +66,7 @@ class UserRequestController extends Controller
     {
         // get all offers with the userRequest table
         // $UserRequest = UserRequest::where('user_id', auth()->user()->id)->get();
-        $UserRequest = Offer::has('UserRequest')->get();
+        $UserRequest = Offer::has('UserRequest')->where('status','open')->get();
         return view('user.dashboard.request.received', compact('UserRequest'));
     }
 

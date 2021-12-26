@@ -37,11 +37,6 @@
                                             <span
                                                 class="font-weight-bold text-dark">{{ number_format($request->budget, 2) }}</span>
                                         </li>
-
-                                        <li class="list-inline-item">
-                                            <span class="font-size-sm">Offers Received:</span>
-                                            <span class="font-weight-bold text-dark">0</span>
-                                        </li>
                                     </ul>
                                 </div>
 

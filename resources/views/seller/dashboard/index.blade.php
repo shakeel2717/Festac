@@ -13,6 +13,56 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3 d-flex align-items-center justify-content-start">
+                            <img src="{{ asset('assets/img/sale.png') }}" alt="Earnings" width="50">
+                        </div>
+                        <div class="col-9 d-flex align-items-end flex-column">
+                            <h6 class="card-subtitle mb-2">Available Balance</h6>
+                            <span class="display-3 text-dark">{{ number_format(balance(), 2) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
+            <!-- Card -->
+            <div class="card h-100 shadow-lg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3 d-flex align-items-center justify-content-start">
+                            <img src="{{ asset('assets/img/invoice.png') }}" alt="Earnings" width="50">
+                        </div>
+                        <div class="col-9 d-flex align-items-end flex-column">
+                            <h6 class="card-subtitle mb-2">Pending Clearance</h6>
+                            <span class="display-3 text-dark">{{ number_format(clearance(), 2) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
+            <!-- Card -->
+            <div class="card h-100 shadow-lg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3 d-flex align-items-center justify-content-start">
+                            <img src="{{ asset('assets/img/cashier.png') }}" alt="Earnings" width="50">
+                        </div>
+                        <div class="col-9 d-flex align-items-end flex-column">
+                            <h6 class="card-subtitle mb-2">Total Withdraw</h6>
+                            <span class="display-3 text-dark">{{ number_format(withdraw(), 2) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row gx-2 gx-lg-3">
+        <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
+            <!-- Card -->
+            <div class="card h-100 shadow-lg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3 d-flex align-items-center justify-content-start">
                             <img src="{{ asset('assets/img/analytics.png') }}" alt="">
                         </div>
                         <div class="col-9 d-flex align-items-end flex-column">
@@ -217,9 +267,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                                                                       "target": "#reportsOverviewDropdown3",
-                                                                                                       "type": "css-animation"
-                                                                                                     }'>
+                                                                                                                   "target": "#reportsOverviewDropdown3",
+                                                                                                                   "type": "css-animation"
+                                                                                                                 }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 

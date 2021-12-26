@@ -2,8 +2,30 @@
 // generating 6 digit unique user code
 
 use App\Models\order;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+
+function balance()
+{
+    $in = Transaction::where('user_id', Auth::user()->id)->where('sum', '+')->sum('amount');
+    $out = Transaction::where('user_id', Auth::user()->id)->where('sum', '-')->sum('amount');
+    $balance = $in - $out;
+    return $balance;
+}
+
+function clearance()
+{
+    $in = Transaction::where('user_id', Auth::user()->id)->where('sum', '+')->where('status','pending')->sum('amount');
+    return $in;
+}
+
+
+function withdraw()
+{
+    $out = Transaction::where('user_id', Auth::user()->id)->where('sum', '-')->where('status','pending')->where('type','withdraw')->sum('amount');
+    return $out;
+}
 
 function generate_user_code($userType)
 {

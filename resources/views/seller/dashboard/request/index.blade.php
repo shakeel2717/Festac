@@ -23,9 +23,33 @@
 
                                     <h3 class="mb-1">{{ $request->category->value }}</h3>
                                     <p>{{ $request->requirement }}</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Created:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($request->created_at))->diffForHumans() }}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Category:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ $request->category->value }}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Budget:</span>
+                                            <span
+                                                class="font-weight-bold text-dark">{{ number_format($request->budget, 2) }}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                            <span class="font-size-sm">Offers Received:</span>
+                                            <span class="font-weight-bold text-dark">0</span>
+                                        </li>
+                                    </ul>
                                 </div>
 
-                                <div class="col-auto justify-content-md-end ml-3 mb-3">
+                                <div class="col-auto justify-content-md-end ml-3">
                                     <!-- Avatar Group -->
                                     <div class="m-2">
                                         <a href="https://api.whatsapp.com/send?phone={{ $request->user->whatsapp }}"
@@ -46,31 +70,7 @@
                             </div>
                             <!-- End Row -->
 
-                            <!-- Stats -->
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <span class="font-size-sm">Created:</span>
-                                    <span
-                                        class="font-weight-bold text-dark">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($request->created_at))->diffForHumans() }}</span>
-                                </li>
 
-                                <li class="list-inline-item">
-                                    <span class="font-size-sm">Category:</span>
-                                    <span class="font-weight-bold text-dark">{{ $request->category->value }}</span>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <span class="font-size-sm">Budget:</span>
-                                    <span
-                                        class="font-weight-bold text-dark">{{ number_format($request->budget, 2) }}</span>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <span class="font-size-sm">Offers Received:</span>
-                                    <span class="font-weight-bold text-dark">0</span>
-                                </li>
-
-                            </ul>
                         </div>
                     </div>
                 </div>
