@@ -1,6 +1,7 @@
 <?php
 // generating 6 digit unique user code
 
+use App\Models\order;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,19 @@ function generate_user_code($userType)
         generate_user_code($userType);
     } else {
         return $code;
+    }
+}
+
+// generate unique order number
+function generate_order_number()
+{
+    $rand = rand(10000000, 99999999);
+    $order_number = 'ORD' . $rand;
+    $order = order::where('order_number', $order_number)->first();
+    if ($order) {
+        generate_order_number();
+    } else {
+        return $order_number;
     }
 }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Offer;
+use App\Models\order;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -92,6 +93,17 @@ class UserRequestController extends Controller
         $user_request->status = 'accepted';
         $user_request->seller_id = $offer->seller_id;
         $user_request->save();
+
+        // creating a new order
+        $order = new order();
+        $order->user_id = $offer->user_id;
+        $order->seller_id = $offer->seller_id;
+        $order->user_requests_id = $validatedData['user_requests_id'];
+        $order->offer_id = $validatedData['offer_id'];
+        $order->order_number = generate_order_number();
+        $order->status = 'open';
+        $order->amount = $offer->budget;
+        $order->save();
         return redirect()->back()->with('message', 'Request accepted successfully');
     }
 
