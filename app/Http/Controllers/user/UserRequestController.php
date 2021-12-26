@@ -72,7 +72,7 @@ class UserRequestController extends Controller
 
     public function receivedShow($id)
     {
-        $user_request = UserRequest::findOrFail($id);
+        $user_request = Offer::where('user_requests_id', $id)->get();
         return view('user.dashboard.request.receivedShow', compact('user_request'));
     }
 

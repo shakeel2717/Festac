@@ -17,7 +17,11 @@
                                     <span
                                         class="badge badge-soft-secondary p-2 mb-2">{{ ucfirst($request->status) }}</span>
 
-                                    <h3 class="mb-1 text-uppercase">{{ ucfirst($request->userRequest->category->value) }}</h3>
+                                    <a
+                                        href="{{ route('user.request.receivedShow', ['id' => $request->userRequest->id]) }}">
+                                        <h3 class="mb-1 text-uppercase">
+                                            {{ ucfirst($request->userRequest->category->value) }}</h3>
+                                    </a>
                                     <p>{{ ucfirst($request->userRequest->requirement) }}</p>
                                 </div>
 
@@ -36,12 +40,14 @@
 
                                 <li class="list-inline-item">
                                     <span class="font-size-sm">Category:</span>
-                                    <span class="font-weight-bold text-dark">{{ ucfirst($request->userRequest->category->value) }}</span>
+                                    <span
+                                        class="font-weight-bold text-dark">{{ ucfirst($request->userRequest->category->value) }}</span>
                                 </li>
 
                                 <li class="list-inline-item">
                                     <span class="font-size-sm">Budget:</span>
-                                    <span class="font-weight-bold text-dark">{{ number_format($request->budget,2) }}</span>
+                                    <span
+                                        class="font-weight-bold text-dark">{{ number_format($request->budget, 2) }}</span>
                                 </li>
 
                                 <li class="list-inline-item">
