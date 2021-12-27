@@ -6,13 +6,13 @@ use Illuminate\View\Component;
 
 class input extends Component
 {
-    public $name, $type, $placeholder, $value, $attribute, $class, $lableClass;
+    public $name, $type, $placeholder, $value, $attribute, $class;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $type, $placeholder, $value = "", $attribute = "", $class = "", $lableClass = "")
+    public function __construct($name, $type, $placeholder, $value = "", $attribute = "", $class = "")
     {
         $this->name = $name;
         $this->type = $type;
@@ -20,7 +20,6 @@ class input extends Component
         $this->value = $value;
         $this->attribute = $attribute;
         $this->class = $class;
-        $this->lableClass = $lableClass;
     }
 
     /**
