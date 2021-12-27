@@ -30,7 +30,7 @@ class order extends Model
 
     public function offer()
     {
-        return $this->belongsTo(offer::class);
+        return $this->belongsTo(Offer::class);
     }
 
 
