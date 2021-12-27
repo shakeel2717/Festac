@@ -16,7 +16,9 @@ class SupportSellerController extends Controller
      */
     public function index()
     {
-        return view('seller.dashboard.support.index');
+        $supports = support::where('user_id', auth()->user()->id)->first();
+        return $supports;
+        return view('seller.dashboard.support.index', compact('supports'));
     }
 
     /**
@@ -47,7 +49,7 @@ class SupportSellerController extends Controller
         $issue = new support();
         $issue->user_id = auth()->user()->id;
         $issue->type = 'seller';
-        $issue->subject = $request->subject;
+        $issue->issues_id = $request->subject;
         $issue->message = $request->message;
         $issue->save();
         return redirect()->route('seller.support.index')->with('message', 'Your message has been submitted successfully');

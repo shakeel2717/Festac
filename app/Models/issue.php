@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class issue extends Model
 {
     use HasFactory;
+
+
+    public function support()
+    {
+        return $this->hasMany(support::class);
+    }
 }

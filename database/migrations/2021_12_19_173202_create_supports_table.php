@@ -17,7 +17,7 @@ class CreateSupportsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('type')->default('user');
-            $table->string('subject');
+            $table->string('issues_id');
             $table->longText('message');
             $table->string('status')->default('open');
             $table->timestamps();

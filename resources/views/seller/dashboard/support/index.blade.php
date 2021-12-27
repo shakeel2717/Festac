@@ -1,47 +1,65 @@
 @extends('seller.dashboard.layout.app')
 @section('title')
-    Seller Support Center
+    Seller Support
 @endsection
 @section('content')
-    <h3 class="display-4">Seller Support Center</h3>
-    <hr>
     <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card shadow-lg border-primary">
-                <div class="card-header mx-auto">
-                    <div class="support-image">
-                        <img src="{{ asset('assets/img/headset.png') }}" alt="Support Center">
+        <div class="col">
+            <div class="card mb-3 mb-lg-5">
+                <div class="card-header">
+                    <div class="row justify-content-between align-items-center flex-grow-1">
+                        <div class="col-sm mb-3 mb-sm-0">
+                            <h4 class="card-header-title">All Support Tickets</h4>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h2 class="card-title text-center">Support Center</h2>
-                    <hr>
-                    <form action="{{ route('seller.support.store') }}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <select class="js-select2-custom custom-select" name="subject" id="subject"> size="1" style="opacity: 0;"
-                                        <option value="">Select Subject</option>
-                                        <option value="1">Payment Issue</option>
-                                        <option value="2">Shipping Issue</option>
-                                        <option value="3">Product Issue</option>
-                                        <option value="4">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Type Your Message in Complet Detail."></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Send to Support Team</button>
-                                </div>
-                            </div>
+                    <div class="input-group input-group-merge">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="tio-search"></i>
+                            </span>
                         </div>
-                    </form>
+                        <input id="search" type="search" class="form-control" placeholder="Search Record"
+                            aria-label="Search Record">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Table -->
+                    <div class="table-responsive">
+                        <table class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Status</th>
+                                    <th>Create Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @forelse ($supports as $support)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $support->issue }}</td>
+                                        <td>{{ $support->message }}</td>
+                                        <td class="text-uppercase">{{ $support->status }}</td>
+                                        <td>{{ $support->created_at }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td>No Record Found</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    {{ $supports->links() }}
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
