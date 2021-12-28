@@ -3,9 +3,23 @@
     Seller Dashboard
 @endsection
 @section('content')
-    <h3 class="display-4">Seller Code: {{ Auth::user()->code }}</h3>
+    <div class="d-flex justify-content-between">
+        <div class="seller">
+            <h3 class="display-4">Business Name</h3>
+            <h3 class="display-4">{{ Auth::user()->code }}</h3>
+        </div>
+        <div class="raiting">
+            <div class="d-flex mb-2">
+                Rating: 5
+                <div class="mx-1"><img src="{{ asset('assets/svg/components/star.svg') }}" alt="Review rating"
+                        width="14"></div>
+                (0 Users)
+            </div>
+        </div>
+    </div>
     <hr>
     <x-seller-warning />
+
     <div class="row gx-2 gx-lg-3">
         <div class="col-sm-6 col-lg-4 mb-3 mb-lg-3">
             <!-- Card -->
@@ -217,9 +231,9 @@
                     <div class="hs-unfold">
                         <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-ghost-secondary rounded-circle"
                             href="javascript:;" data-hs-unfold-options='{
-                                                                "target": "#reportsOverviewDropdown3",
-                                                                "type": "css-animation"
-                                                                }'>
+                                                                                "target": "#reportsOverviewDropdown3",
+                                                                                "type": "css-animation"
+                                                                                }'>
                             <i class="tio-more-vertical"></i>
                         </a>
 

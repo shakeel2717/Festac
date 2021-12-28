@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\seller\Auth\RegisterController;
 use App\Http\Controllers\seller\SellerDashboardController;
+use App\Http\Controllers\seller\SellerOfferController;
 use App\Http\Controllers\seller\SellerOrderController;
 use App\Http\Controllers\seller\SellerProfileController;
 use App\Http\Controllers\seller\SellerRequestController;
@@ -25,6 +26,7 @@ Route::prefix('seller/dashboard')->name('seller.')->middleware(['auth', 'seller'
     Route::get('/request/sent', [SellerRequestController::class, 'sent'])->name('request.sent');
     Route::get('order/request/{order}', [SellerOrderController::class, 'request'])->name('order.request');
     Route::resource('order', SellerOrderController::class);
+    Route::resource('offer', SellerOfferController::class);
 });
 
 

@@ -95,7 +95,7 @@
         <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.request.sent') }}" title="Layouts"
             data-placement="left">
             <i class="tio-bring-forward nav-icon"></i>
-            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">My Sent Request</span>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Completed Orders</span>
         </a>
     </li>
 
@@ -117,6 +117,25 @@
             data-placement="left">
             <i class="tio-new-message nav-icon"></i>
             <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Open new Ticket</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <div class="nav-divider"></div>
+    </li>
+
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.offer.create') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-attachment nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">My Offers</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.offer.create') }}" title="Layouts"
+            data-placement="left">
+            <i class="tio-new-message nav-icon"></i>
+            <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Make an offer</span>
         </a>
     </li>
 
