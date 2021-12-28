@@ -15,7 +15,8 @@ class SellerOfferController extends Controller
      */
     public function index()
     {
-        //
+        $offers = SellerOfffer::where('user_id', auth()->user()->id)->paginate(10);
+        return view('seller.dashboard.offer.index', compact('offers'));
     }
 
     /**

@@ -124,7 +124,7 @@
     </li>
 
     <li class="nav-item ">
-        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.offer.create') }}" title="Layouts"
+        <a class="js-nav-tooltip-link nav-link " href="{{ route('seller.offer.index') }}" title="Layouts"
             data-placement="left">
             <i class="tio-attachment nav-icon"></i>
             <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">My Offers</span>
