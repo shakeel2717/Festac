@@ -10,10 +10,10 @@
         </div>
         <div class="raiting">
             <div class="d-flex mb-2">
-                Rating: 5
+                Rating: {{ $sellerRating->avg('rating') }}
                 <div class="mx-1"><img src="{{ asset('assets/svg/components/star.svg') }}" alt="Review rating"
                         width="14"></div>
-                (0 Users)
+                ({{ $sellerRating->count() }} Users)
             </div>
         </div>
     </div>

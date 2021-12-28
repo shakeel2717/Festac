@@ -45,6 +45,23 @@
                                     <form action="{{ route('user.order.accept') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="order_id" value="{{ $order->id }}">
+                                        <!-- Quantity Counter -->
+                                        <small>Rating for Seller out of 5</small>
+                                        <div
+                                            class="js-quantity-counter input-group-quantity-counter d-flex justify-content-center w-100 mb-3">
+                                            <input type="number"
+                                                class="js-result form-control input-group-quantity-counter-control"
+                                                name="rating" value="1" min="1" max="5">
+                                            <div class="input-group-quantity-counter-toggle">
+                                                <a class="js-minus input-group-quantity-counter-btn" href="javascript:;">
+                                                    <i class="tio-remove"></i>
+                                                </a>
+                                                <a class="js-plus input-group-quantity-counter-btn" href="javascript:;">
+                                                    <i class="tio-add"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- End Quantity Counter -->
                                         <button class="btn btn-lg btn-success btn-block mt-md-4 mt-lg-0"><i
                                                 class="tio-checkmark-square-outlined"></i> Accept Delivery
                                         </button>

@@ -236,6 +236,7 @@
     <script src="{{ asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/datatables.net.extensions/select/select.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <x-alert />
     @yield('footer')

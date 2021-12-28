@@ -43,3 +43,11 @@ $(document).on('ready', function () {
 
 if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write(
     '<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+
+$(document).on('ready', function () {
+    // INITIALIZATION OF QUANTITY COUNTER
+    // =======================================================
+    $('.js-quantity-counter').each(function () {
+        var quantityCounter = new HSQuantityCounter($(this)).init();
+    });
+});

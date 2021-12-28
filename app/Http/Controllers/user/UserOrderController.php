@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\order;
+use App\Models\SellerRating;
 use App\Models\Transaction;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ class UserOrderController extends Controller
     {
         $validatedData = $request->validate([
             'order_id' => 'required',
+            'rating' => 'required|integer|between:1,5',
         ]);
 
         $order = order::find($request->order_id);
@@ -61,6 +63,14 @@ class UserOrderController extends Controller
         $offer = $order->offer;
         $offer->status = 'complete';
         $offer->save();
+
+        // inserting seller rating
+        $rating = new SellerRating();
+        $rating->seller_id = $offer->seller_id;
+        $rating->user_id = auth()->user()->id;
+        $rating->rating = $validatedData['rating'];
+        $rating->save();
+
         return redirect()->back()->with('message', 'Order Accepted Successfully');
     }
 
