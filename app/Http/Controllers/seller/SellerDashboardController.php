@@ -15,7 +15,6 @@ class SellerDashboardController extends Controller
     {
         $requests = UserRequest::all();
         $orders = order::where('seller_id', Auth::user()->id)->where('status','open')->take(2)->get();
-        $transactions = Transaction::where('user_id', Auth::user()->id)->take(2)->get();
-        return view('seller.dashboard.index', compact('requests', 'orders', 'transactions'));
+        return view('seller.dashboard.index', compact('requests', 'orders'));
     }
 }

@@ -61,16 +61,6 @@ class UserOrderController extends Controller
         $offer = $order->offer;
         $offer->status = 'complete';
         $offer->save();
-
-        // inseting this balance into seller balance
-        $transaction = new Transaction();
-        $transaction->user_id = $order->seller_id;
-        $transaction->type = 'credit';
-        $transaction->amount = $order->amount;
-        $transaction->sum = '+';
-        $transaction->status = 'approved';
-        $transaction->note = 'Order Completed';
-        $transaction->save();
         return redirect()->back()->with('message', 'Order Accepted Successfully');
     }
 
